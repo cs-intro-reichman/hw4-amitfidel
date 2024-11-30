@@ -28,6 +28,7 @@ public class Primes {
                 }
             }
         }
+        System.out.println("Prime numbers up to "+n+":");
         for (int i=2;i<isPrime.length;i++)
         {
             if(isPrime[i])
