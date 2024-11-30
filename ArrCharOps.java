@@ -151,10 +151,10 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         long l=0;
-        int n=arr.length-1;
+        int n=arr.length;
         for(int i=0;i<arr.length;i++)
         {
-            l+=arr[i]*7^(n);
+            l+=arr[i]*7^(n-(i+1));
             if (n==0) 
             {
                 return l;    
