@@ -1,6 +1,11 @@
 public class Primes {
-    public static void main(String[] args) 
+    public static void main(int n) 
     {
+        String[] args=new String[n+1];
+        for(int i=0;i<n+1;i++)
+        {
+            args[i]=String.valueOf(i);
+        }
         //String[] args2=new String[7];
         if(args.length<2)
         {
