@@ -152,16 +152,16 @@ public class ArrCharOps {
     public static long hashCode(char[] arr) {
         long l=0;
         int n=arr.length;
+        if (n<1) 
+        {
+            return 0;    
+        }
         for(int i=0;i<arr.length;i++)
         {
             l+=arr[i]*7^(n-(i+1));
-            if (n==0) 
-            {
-                return l;    
-            }
             n--;
         }
-        return 0;
+        return l;
     }
 
     /**
