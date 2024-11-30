@@ -158,7 +158,8 @@ public class ArrCharOps {
         }
         for(int i=0;i<arr.length;i++)
         {
-            l+=arr[i]*7^(n-(i+1));
+            int temp=n-(i+1);
+            l+=arr[i]*Math.pow(7,temp);
         }
         return l;
     }
