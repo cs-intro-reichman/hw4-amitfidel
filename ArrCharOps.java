@@ -22,6 +22,9 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
+        System.out.println(subArray(arr2, 3, 9)); //erstood
+        System.out.println(subArray(arr2, 9, 9)); //d
+        System.out.println(subArray(arr2, 0, 9)); //Understood
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -44,13 +47,17 @@ public class ArrCharOps {
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        for(int i=0;i<arr1.length;i++)
+        if (arr1.length==arr2.length) 
+        {
+            for(int i=0;i<arr1.length;i++)
         {
             if (arr1[i]!=arr2[i])
             {
                 return false;
             }
         }
+        }
+        
         return true;
     }
 
@@ -118,12 +125,15 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char[] cut=new char[endIndex-beginIndex+1];
+        char[] cut=new char[endIndex-beginIndex];
         int counter=0;
-        for(int i=beginIndex;i<endIndex+1;i++)
+        if (endIndex<=arr.length) 
+        {
+            for(int i=beginIndex;i<endIndex;i++)
         {
             cut[counter]=arr[i];
             counter++;
+        }
         }
         return cut;
     }
