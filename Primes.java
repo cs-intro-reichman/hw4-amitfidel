@@ -4,8 +4,8 @@ public class Primes {
         int n=Integer.parseInt(args[0]);
         if(n<2)
         {
-        System.out.println("no primes here");
-        return;
+            System.out.println("no primes here");
+            return;
         }
         boolean[] isPrime=new boolean[n+1];
         int counter=0;
@@ -15,7 +15,7 @@ public class Primes {
         }
         isPrime[0]=false;
         isPrime[1]=false;
-        for(int i=2;i<Math.sqrt(n);i++)
+        for(int i=2;i<=Math.sqrt(n);i++)
         {
             if (isPrime[i]==true) 
             {
