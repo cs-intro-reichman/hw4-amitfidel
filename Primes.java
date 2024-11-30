@@ -4,7 +4,6 @@ public class Primes {
         int n=Integer.parseInt(args[0]);
         if(n<2)
         {
-            System.out.println("no primes here");
             return;
         }
         boolean[] isPrime=new boolean[n+1];
