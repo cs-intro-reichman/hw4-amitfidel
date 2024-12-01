@@ -78,11 +78,11 @@ public class ArrCharOps {
     /** Same as indexOf(char[], char), but starts the search in the given index.
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
-        if (arr.length<fromIndex||fromIndex<1)
+        if (arr.length<=fromIndex||fromIndex<0)
         {
          return -1;   
         }
-        for(int i=fromIndex-1;i<arr.length;i++)
+        for(int i=fromIndex;i<arr.length;i++)
         {
             if (arr[i]==ch)
             {
@@ -191,39 +191,32 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) 
     {
-        if(str1==str2)
+        if (str1 == null || str2 == null) 
         {
-            return 0;
+            return -2;
         }
-        if (str1.length()>str2.length()) 
+        int minLength=Math.min(str1.length(),str2.length());
+        for (int i = 0; i < minLength; i++) 
         {
-            for(int i=0;i<str2.length();i++)
+            char ch1 = str1.charAt(i);
+            char ch2 = str2.charAt(i);
+            if (ch1 < ch2) 
             {
-                if (str1.charAt(i)<str2.charAt(i)) 
-                {
-                    return -1;
-                }
-                if (str2.charAt(i)<str1.charAt(i)) 
-                {
-                   return 1;
-                }
+                return -1; 
             }
-            return 1;
-        }
-        else
-        {
-            for(int i=0;i<str1.length();i++)
+            if (ch1 > ch2) 
             {
-                if (str1.charAt(i)<str2.charAt(i)) 
-                {
-                    return -1;
-                }
-                if (str2.charAt(i)<str1.charAt(i)) 
-                {
-                   return 1;
-                }
+                return 1; 
             }
-            return -1;
         }
+        if (str1.length() < str2.length()) 
+        {
+            return -1; 
+        }
+        if (str1.length() > str2.length()) 
+        {
+            return 1; 
+        }
+        return 0;
     }
 }
