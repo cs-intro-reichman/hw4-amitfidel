@@ -35,16 +35,13 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        boolean cach=false;
         if (str1==null||str2==null||str1.length()<str2.length()) 
         {
            return false; 
         }
-        for(int i=0;i<str1.length()-str2.length();i++)
+        for(int i=0;i<str1.length()-str2.length()+1;i++)
         {
-            if (str1.charAt(i)==str2.charAt(0)) 
-            {
-                cach=true;
+            boolean cach=true;
                 for(int j=0;j<str2.length();j++)
                 {
                     if(str1.charAt(i+j)!=str2.charAt(j))
@@ -53,7 +50,6 @@ public class MyString {
                         break;
                     }
                 }
-            }
             if (cach) 
             {
             return true;
