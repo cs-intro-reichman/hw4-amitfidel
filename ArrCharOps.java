@@ -135,7 +135,7 @@ public class ArrCharOps {
         char[] cut=new char[(endIndex-beginIndex)+1];
         if (endIndex<=arr.length&&endIndex>beginIndex) 
         {
-            for(int i=beginIndex;i<endIndex+1;i++)
+            for(int i=beginIndex;i<cut.length;i++)
         {
             cut[counter]=arr[i];
             counter++;
