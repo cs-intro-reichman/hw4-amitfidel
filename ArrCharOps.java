@@ -13,18 +13,20 @@ public class ArrCharOps {
         System.out.println(lastIndexOf(arr1, 'l'));
         System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
-        System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", "abcd"));
-        System.out.println(compareTo("abw", "abcd"));
-        System.out.println(compareTo("Abcd", "a"));
-        System.out.println(compareTo("apple", "banana"));
-        System.out.println(compareTo("apple", "applepie"));
-        System.out.println(compareTo("Zoo", "zoo"));
+        System.out.println(compareTo("abcd", "abcd")); //0
+        System.out.println(compareTo("abc", "abcd")); //-1
+        System.out.println(compareTo("abw", "abcd")); //1
+        System.out.println(compareTo("Abcd", "a")); //-1
+        System.out.println(compareTo("apple", "banana")); //-1
+        System.out.println(compareTo("apple", "applepie")); //-1
+        System.out.println(compareTo("Zoo", "zoo")); //-1
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
         System.out.println(subArray(arr2, 3, 9)); //erstood
         System.out.println(subArray(arr2, 9, 9)); //d
         System.out.println(subArray(arr2, 0, 9)); //Understood
+        System.out.println(subArray(arr2, 0, 0)); //u
+        System.out.println(subArray(arr2, 3, 3)); //e
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -129,8 +131,8 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char[] cut=new char[endIndex-beginIndex+1];
         int counter=0;
+        char[] cut=new char[(endIndex-beginIndex)+1];
         if (endIndex<=arr.length&&endIndex>beginIndex) 
         {
             for(int i=beginIndex;i<endIndex+1;i++)
@@ -193,7 +195,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) 
     {
-        if (str1.equals(null) || str2.equals(null)) 
+        if (str1==null || str2==null) 
         {
             return -2;
         }
