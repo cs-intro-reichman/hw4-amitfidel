@@ -195,6 +195,8 @@ public class ArrCharOps {
         {
             return -2;
         }
+        str1=lowerCase(str1);
+        str2=lowerCase(str2);
         int minLength=Math.min(str1.length(),str2.length());
         for (int i = 0; i < minLength; i++) 
         {
@@ -218,5 +220,20 @@ public class ArrCharOps {
             return 1; 
         }
         return 0;
+    }
+
+    public static String lowerCase(String str) {
+        String str2="";
+        for(int i=0;i<str.length();i++)
+        {
+            char chek=str.charAt(i);
+            if(chek>='A'&chek<='Z')
+            {
+                str2+=(char)(chek+32);
+            }
+            else
+            str2+=chek;
+        }
+        return str2;
     }
 }
