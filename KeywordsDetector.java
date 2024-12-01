@@ -24,12 +24,12 @@ public class KeywordsDetector {
     {
      for(int i=0;i<sentences.length;i++)
      {
-        sentences[i]=lowerCase(sentences[i]);
         for(int j=0;j<keywords.length;j++)
            {
-            if (contains(sentences[i], keywords[j])) 
+            if (contains(sentences[i], lowerCase(keywords[j]))) 
             {
                 System.out.println(sentences[i]);
+                break;
             }
            } 
         
@@ -40,7 +40,7 @@ public class KeywordsDetector {
         for(int i=0;i<str.length();i++)
         {
             char chek=str.charAt(i);
-            if(chek>='A'&chek<='Z')
+            if(chek>='A'&&chek<='Z')
             {
                 str2+=(char)(chek+32);
             }
