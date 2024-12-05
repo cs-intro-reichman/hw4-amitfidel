@@ -192,6 +192,7 @@ public class ArrCharOps {
      *         zero if they are equal, and 1 if str1 is
      *         lexicographically greater than str2.
      *         return -2 if there is an error with the input.
+     * 
      */
     public static int compareTo(String str1, String str2) 
     {
