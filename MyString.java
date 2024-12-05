@@ -14,17 +14,48 @@ public class MyString {
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
+        System.out.println(contains("", ""));
     }
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        // Replace the following statement with your code
-        return null;
+        String str2="";
+        for(int i=0;i<str.length();i++)
+        {
+            char chek=str.charAt(i);
+            if(chek>='A'&chek<='Z')
+            {
+                str2+=(char)(chek+32);
+            }
+            else
+            str2+=chek;
+        }
+        return str2;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
+        if (str1==null||str2==null||str1.length()<str2.length()) 
+        {
+           return false; 
+        }
+        for(int i=0;i<str1.length()-str2.length()+1;i++)
+        {
+            boolean cach=true;
+                for(int j=0;j<str2.length();j++)
+                {
+                    if(str1.charAt(i+j)!=str2.charAt(j))
+                    {
+                        cach=false;
+                        break;
+                    }
+                }
+            if (cach) 
+            {
+            return true;
+            }
+        }
+        
         return false;
     }
 }
